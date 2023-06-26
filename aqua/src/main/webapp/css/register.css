@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+/* register */
+.register{
+  width: 90%;
+  max-width: 400px;
+    background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin: 100px auto;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+    align-items: center;
+}
+.register h1 {
+  text-align: center;
+  margin-bottom:10px ;
+  color: var(--text-color-1);
+}
+#LoginForm{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.message{
+  height: 25px;
+}
+.register input[type="text"],
+.register input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--card-color);
+  font-size: 16px;
+  box-sizing: border-box;
+}
+.register input[type="submit"] {
+  width: 100%;
+  background-color: var(--button-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
+}
+.register input[type="submit"]:hover {
+  background-color: var(--hover-color);
+}
+.register p {
+  margin: 0;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 14px;
+  color:var(--text-color-1);
+}
+.register p a {
+  color: #FFCC00;
+  text-decoration: none;
+}
+.register p a:hover {
+  color: var(--hover-color);
+  text-decoration: underline;
+}
+
+/* Media Queries */
+@media screen and (max-width: 480px) {
+  .register {
+    margin-top: 50px;
+  }
+}
