@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+:root {
+  --bg-color: #add8e6;
+  --nav-color: #ffffff;
+  --text-color: #000;
+  --hover-color: #87ceeb;
+  --button-color: #00bfff;
+  --card-text-color: #00f1b1;
+  --footer-bg-color: #ffffff;
+  --body-font: 16px;
+  --heading-font: 24px;
+  --h1-font: 4em;
+  --h2-font: 3em;
+  --h3-font: 2em;
+  --subheading-font: 20px;
+  --mobilebody: 14px;
+  --mobileheading: 18px;
+  --mobilesubheading: 15px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+font-family: 'Poppins', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* about */
+.wrapper{
+  margin-top: 10%;
+}
+
+.wrapper h1{
+  font-size: var(--h2-font);
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.team{
+  display: flex;
+  justify-content: center;
+  width: auto;
+  text-align: center;
+  flex-wrap: wrap;
+  margin-top: 100px;
+}
+
+.team .team_member{
+  background: var(--footer-bg-color);
+  margin: 5px;
+  margin-bottom: 50px;
+  width: 300px;
+  padding: 20px;
+  line-height: 20px;
+  color: var(--text-color);  
+  position: relative;
+}
+
+.team .team_member h3{
+  color: var(--text-color);
+  font-size: var(--heading-font);
+  margin-top: 50px;
+}
+.team .team_member p{
+	font-size: var(--body-font);
+  margin-top: 15px;
+}
+
+.team .team_member .team_img{
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.team .team_member .team_img img{
+  width: 100%;
+  height: 100%;
+  padding: 4px;
+  border-radius: 50%;
+}
+
+.aboutus{
+  background: url("../resources/icons/about") no-repeat left;
+  background-size: 55%;
+  overflow: hidden;
+  padding: 100px 0;
+  margin-top: 10%;
+  margin-left: 64px;
+  margin-right: 64px;
+}
+
+.title-text{
+width: 60%;
+float: right;
+background-color: #4F759B;
+padding: 130px;
+}
+
+.title-text h2{
+margin-bottom: 30px;
+font-size: var(--h2-font);
+font-weight:900;
+color: white;
+
+}
+.text{
+  color: white;
+  font-size: var(--body-font);
+  text-align:justify;
+}
+.welcome-text{
+  color: white;
+  font-size: 25px;
+  text-align:justify;
+}
+@media (max-width: 600px){
+  .aboutus{
+    padding: 0;
+  }
+  
+  .title-text{
+    padding: 60px;
+  }
+}
+
+@media (max-width: 1200px){
+ 
+  .title-text{
+    padding: 80px;
+  }
+}
+
+@media (max-width: 1000px){
+  .aboutus{
+    background-size: 100%;
+    padding: 100px 40px;
+  }
+  
+  .title-text{
+    width: 100%;
+  }
+}
