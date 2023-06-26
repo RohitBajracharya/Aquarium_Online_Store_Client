@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+						http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+	<tx:annotation-driven />
+	<!-- Data Source Properties-->
+	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" name="ds">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/aquainfinity" />
+		<property name="username" value="root" />
+		<property name="password" value="" />
+	</bean>
+	<bean class="org.springframework.orm.hibernate5.LocalSessionFactoryBean" name="factory">
+		<!-- Data source-->
+		<property name="dataSource" ref="ds"></property>
+		<!-- Hibernate Properties-->
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+		<!-- Annotated Classes-->
+		<property name="annotatedClasses">
+			<list>
+				<value>com.entities.Fish</value>
+				<value>com.entities.Accessories</value>
+				<value>com.entities.Customer</value>
+				<value>com.entities.FishOrder</value>
+				<value>com.entities.AccessoriesOrder</value>
+				<value>com.entities.Checkout</value>
+			</list>
+		</property>
+	</bean>
+	<!-- HibernateTemplate-->
+	<bean class="org.springframework.orm.hibernate5.HibernateTemplate" name="hibernateTemplate">
+		<property name="sessionFactory" ref="factory"></property>
+	</bean>
+	<!-- Dao-->
+	<bean class="com.dao.FishDao" name="fishDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<bean class="com.dao.AccessoriesDao" name="accessoriesDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<bean class="com.dao.CustomerDao" name="customerDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<bean class="com.dao.AccessoriesOrderDao" name="accessoriesOrderDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<bean class="com.dao.FishOrderDao" name="fishOrderDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<bean class="com.dao.CheckoutDao" name="checkoutDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<!-- TransactionManager-->
+	<bean class="org.springframework.orm.hibernate5.HibernateTransactionManager" name="transactionManager">
+		<property name="sessionFactory" ref="factory"></property>
+	</bean>
+</beans>

@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+:root {
+  --bg-color: #add8e6;
+  --nav-color: #ffffff;
+  --text-color: #000;
+  --hover-color: #87ceeb;
+  --button-color: #00bfff;
+  --checkout-button-color:#4CBB17;
+  --checkout-button-hover-color: #399E13;
+  --khalti-button-color:#2E3192;
+  --khalti-button-hover-color: #3752B4;
+  --card-text-color: #00f1b1;
+  --footer-bg-color: #ffffff;
+  --body-font: 16px;
+  --heading-font: 24px;
+  --h1-font: 4em;
+  --h2-font: 3em;
+  --h3-font: 2em;
+  --subheading-font: 20px;
+  --mobilebody: 14px;
+  --mobileheading: 18px;
+  --mobilesubheading: 15px;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', Arial, sans-serif;
+}
+
+body {
+	background-color: var(- -bg-color);
+	color: var(- -text-color);
+	font-family: 'Poppins', Arial, sans-serif;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+.qr-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.qr-code {
+  margin-right: 20px;
+}
+
+.qr-code img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info h2 {
+  font-size: 24px;
+  margin: 0 0 10px 0;
+}
+
+.info p {
+  font-size: 18px;
+  margin: 0;
+}
+.payment{
+	display:flex;
+	flex-direction:column;
+	 justify-content: center;
+  align-items: center;
+}
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.payment-type {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+}
+
+.cash-button, #payment-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  
+  color: white;
+}
+#payment-button{
+	background-color: var(--khalti-button-color);
+}
+.cash-button:hover{
+	  background-color: var(--checkout-button-hover-color);
+  cursor: pointer;
+}
+#payment-button:hover {
+  background-color: var(--khalti-button-hover-color);
+  cursor: pointer;
+}
+
+.cash-button {
+  background-color: var(--checkout-button-color);
+}
+@media only screen and (max-width: 768px) {
+  .qr-container {
+    height: auto;
+  }
+
+  .qr-code {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .info {
+    text-align: center;
+  }
+
+  .qr-code img {
+    max-width: 100%;
+  }
+}
